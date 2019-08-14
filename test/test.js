@@ -13,8 +13,22 @@ describe('Sanity Check', () => {
     });
 });
 
-describe('Coffee Model', async () =>{
-    const coffeeData = await Coffee.getBy(3);
-    console.log(coffeeData);
-    expect(coffeeData).to.be.an.instanceOf(Coffee);
-});
+// describe('Coffee Model', async () =>{
+//     const coffeeData = await Coffee.getBy(3);
+//     console.log(coffeeData);
+//     expect(coffeeData).to.be.an.instanceOf(Coffee);
+// });
+
+
+
+describe('Coffee Model',  () => {
+    it('Should be an instance of Coffee', async () => {
+      const coffeeData = await Coffee.getById(3);
+      console.log(coffeeData);
+      expect(coffeeData).to.be.an.instanceOf(Coffee);
+    });
+   });
+
+   
+
+

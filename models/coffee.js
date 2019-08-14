@@ -8,9 +8,9 @@ class Coffee {
         this.size = size;
     }
     static getById(id){
-        return db.one(`select * from coffee where id = ${id}`)
+        return db.one(`select * from coffee where id=${id}`)
             .then((oneCoffeeData)=>{
-                const coffeeInstance = new coffee(oneCoffeeData.id,
+                const coffeeInstance = new Coffee(oneCoffeeData.id,
                     oneCoffeeData.name,
                     oneCoffeeData.bespoke,
                     oneCoffeeData.size
@@ -31,3 +31,4 @@ class Coffee {
         `)
     }
 }
+module.exports = Coffee;
