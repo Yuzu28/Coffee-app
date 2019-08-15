@@ -6,9 +6,9 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "db:create": "createdb coffee-orders-app",
-    "db:init": "psql -f schema.sql coffee-orders-app && psql -f seed.sql coffee-orders-app",
-    "db:destroy": "dropdb coffee-orders-app",
+    "db:create": "createdb coffee-orders-app1",
+    "db:init": "psql -f schema.sql coffee-orders-app1 && psql -f seed.sql coffee-orders-app1",
+    "db:destroy": "dropdb coffee-orders-app1",
     "db:reset": "npm run db:destroy; npm run db:create && npm run db:init",
     "test": "mocha",
     "test:watch": "mocha -w"
@@ -17,8 +17,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
-    "pg-promise": "^9.0.0"
+    "pg-promise": "^9.0.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",

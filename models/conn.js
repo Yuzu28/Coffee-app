@@ -11,4 +11,4 @@ const options = {
 };
 
 const db = pgp(options);
-module.exports = db;
+// module.exports = db;

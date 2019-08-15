@@ -1,4 +1,4 @@
-const db = require('./conn');
+const db = require('./db');
 
 class Coffee {
     constructor(id, name, bespoke, size){
@@ -10,15 +10,17 @@ class Coffee {
     static getById(id){
         return db.one(`select * from coffee where id=${id}`)
             .then((oneCoffeeData)=>{
-                const coffeeInstance = new Coffee(oneCoffeeData.id,
-                    oneCoffeeData.name,
-                    oneCoffeeData.bespoke,
-                    oneCoffeeData.size
-                    );
-                return coffeeInstance;
+                console.log("coffee data: ",oneCoffeeData);
+                return oneCoffeeData
+                // const coffeeInstance = new Coffee(oneCoffeeData.id,
+                //     oneCoffeeData.name,
+                //     oneCoffeeData.bespoke,
+                //     oneCoffeeData.size
+                //     );
+                // return coffeeInstance;
             })
-            .catch(() => {
-                return null;
+            .catch((err) => {
+                return err;
             });
     }
     save(){
